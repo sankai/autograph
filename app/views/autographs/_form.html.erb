@@ -1,0 +1,33 @@
+
+<%= form_for(@autograph) do |f| %>
+  <% if @autograph.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@autograph.errors.count, "error") %> prohibited this autograph from being saved:</h2>
+
+      <ul>
+      <% @autograph.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  こちらにご署名願います。
+  <br/>
+  <canvas id="paper" class="paper" width="400" height="400" style="background-color:ivory;" data-target="#sign">
+    ご利用のブラウザでは署名欄は表示できません。
+  </canvas>
+  
+  <button type="button" name="clearCanvas" class="clear-canvas">クリア</button>
+  <input type="hidden" id="sign" name="sign" value="" />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

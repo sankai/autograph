@@ -1,0 +1,27 @@
+<h1>署名一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @autographs.each do |autograph| %>
+      <tr>
+        <td><%= autograph.name %></td>
+        <td><%= link_to '表示', autograph %></td>
+        <td><%= link_to '編集', edit_autograph_path(autograph), 'data-no-turbolink' => '1' %></td>
+        <td><%= link_to '削除', autograph, method: :delete, data: { confirm: '削除していいですか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規', new_autograph_path, 'data-no-turbolink' => '1' %>
