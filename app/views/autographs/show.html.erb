@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前:</strong>
+  <%= @autograph.name %>
+</p>
+
+<p>
+  <strong>署名:</strong>
+  <%= image_tag image_autograph_path(@autograph) %>
+</p>
+
+<%= link_to '編集', edit_autograph_path(@autograph), 'data-no-turbolink' => '1' %> |
+<%= link_to '戻る', autographs_path %>
