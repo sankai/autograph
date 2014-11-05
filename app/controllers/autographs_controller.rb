@@ -73,7 +73,7 @@ class AutographsController < ApplicationController
 
   def index_by_shell
     
-    require "open3"
+    # require "open3"
 
     command = 'SHELL/MAKE_LIST'
         
