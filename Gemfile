@@ -49,3 +49,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'kinukake', '0.0.1', :git => 'git://github.com/sankai/kinukake.git'

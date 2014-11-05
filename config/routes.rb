@@ -3,8 +3,10 @@ Tegaki::Application.routes.draw do
   root to: 'autographs#index'
 
   resources :autographs do
-    member { get :image } # <= ’Ç‰Á
+    member { get :image } # <= ï¿½Ç‰ï¿½
   end
+  
+  get 'index_by_shell' => 'autographs#index_by_shell'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

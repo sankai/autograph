@@ -1,0 +1,14 @@
+#!/bin/bash 
+#-----------------------------
+# リストを作る
+#-----------------------------
+dir=/home/action/workspace/autograph  
+dbd=$dir/db 
+#echo "select name, created_at, updated_at from autographs;"     |
+#sqlite3 $dbd/development.sqlite3                                |
+#tr "|" " "                                                      |
+rake extract:extract                                             |
+# awk '{print "<tr><td>"$1"</td><td>"$2"</td><td>"$3"</td></tr>"}' |
+awk '{print "<tr><td>"$1"</td><td>"$2"</td><td>"$5"</td></tr>"}' |
+cat
+exit 0

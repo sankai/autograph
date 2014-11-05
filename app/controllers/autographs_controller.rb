@@ -1,6 +1,8 @@
 class AutographsController < ApplicationController
   before_action :set_autograph, only: [:show, :edit, :update, :destroy, :image]
 
+  include Kinukake
+  
   # GET /autographs
   # GET /autographs.json
   def index
@@ -69,6 +71,16 @@ class AutographsController < ApplicationController
     send_data(@autograph.image, type: 'image/png, disposition: :inline')
   end
 
+  def index_by_shell
+    
+    require "open3"
+
+    command = 'SHELL/MAKE_LIST'
+        
+    @data_by_shell = run(command).html_safe
+    # send_data res, :type => :text, :disposition => 'inline'
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_autograph

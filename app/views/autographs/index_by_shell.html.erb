@@ -1,0 +1,23 @@
+<h1>署名一覧(シェル)</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>日付</th>
+      <th>時間</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= @data_by_shell %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規', new_autograph_path, 'data-no-turbolink' => '1' %>
+<br>
+<br>
+<%= button_to '一覧（シェル）', {:action => 'index_by_shell', :controller => :autographs}, :method => :get %>
